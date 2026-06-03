@@ -31,13 +31,15 @@
 
 ## Un enjeu ancien
 
-![John Snow cartographie le choléra à Londres](https://upload.wikimedia.org/wikipedia/commons/2/27/Snow-cholera-map-1.jpg)
+John Snow cartographie le choléra à Londres
+
+<!-- ![John Snow cartographie le choléra à Londres](https://upload.wikimedia.org/wikipedia/commons/2/27/Snow-cholera-map-1.jpg) -->
 
 ## Un enjeu ancien... et actuel
 
 ::: {#fig-elephants layout-ncol=2}
 
-![La  première carte choroplèthe (Dupin, 1928)](https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Carte_figurative_de_l%27instruction_populaire_de_la_France.jpg/800px-Carte_figurative_de_l%27instruction_populaire_de_la_France.jpg)
+![La  première carte choroplèthe (Dupin, 1928)](img/Carte_figurative_de_l'instruction_populaire_de_la_France.jpg)
 
 ![Une carte de la population actuelle faite avec {{< fa brands r-project >}} inspirée par ce style ([source](https://rgeo.linogaliana.fr/exercises/cartography.html))](./img/pop.png)
 
