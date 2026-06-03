@@ -1,7 +1,7 @@
 ---
-title: Nouvelles sources de données pour la statistique publique
+title: L'utilisation de nouvelles sources de données pour la statistique publique
 subtitle: |
-  [**[Julien PRAMIL (Insee), Nicolas TOULEMONDE (Insee)]{.orange}**]{.orange}
+  **Nicolas TOULEMONDE (Insee){.orange}**
 slide-number: true
 
 lang: fr-FR
