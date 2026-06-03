@@ -1,0 +1,42 @@
+---
+title: L'utilisation de nouvelles sources de données pour la statistique publique
+subtitle: |
+  Nicolas TOULEMONDE (Insee)
+slide-number: true
+
+lang: fr-FR
+controls: true
+bibliography: slides/references.bib
+
+slide-tone: false # for blind readers
+chalkboard: false # press the B key to toggle chalkboard
+jump-to-slide: true #press "g" to jump and the number of slide
+mouse-wheel: true
+transition: slide
+fig-cap-location: bottom
+
+embed-resources: true
+
+custom-toc: true
+
+---
+
+
+
+{{< include "slides/_intro.qmd" >}}
+
+{{< include "slides/_admin.qmd" >}}
+
+
+{{< include "slides/collecte.qmd" >}}
+
+{{< include "slides/_geoloc.qmd" >}}
+
+
+{{< include "slides/texte.qmd" >}}
+
+{{< include "slides/images.qmd" >}}
+
+{{< include "slides/nowcasting.qmd" >}}
+
+## Bibliographie
