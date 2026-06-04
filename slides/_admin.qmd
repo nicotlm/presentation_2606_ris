@@ -21,22 +21,6 @@
     + Opportunité mais perte de contrôle dans la conception
 
 
-## Nature des données administratives
-
-- Aspect transactionnel
-
-- Donnée n’est stabilisée qu’après plusieurs cycles de gestion
-    + Continuité, au niveau de l’unité statistique, ne va pas de soi
-
-::: {.callout-note}
-## La collecte devient un processus vivant
-
-- Données mises à jour à plusieurs échéances
-- Structure du fichier de données évolue
-    + Nouveau crédit d’impôt = ajout d’une catégorie dans les déclarations fiscales
-    + Induit un changement du fichier de gestion
-
-:::
 
 ## Nature des données administratives {.smaller}
 
@@ -77,27 +61,6 @@ Par exemple, les déclarations fiscales des ménages sont annuelles, avec un cal
     + Généralement fréquence moindre des données administratives
     + Mais certaines données quasi temps réel (SIVIC, SNDS, GIE CB...)
 
-## Aparté : les 5V s'appliquent aussi aux données administratives {.smaller}
-
-McKinsey définissait les propriétés du _big data_ selon 5V :
-
-1. Volume : DSN > 1To de données par an, SNDS > 450To
-
-. . .
-
-2. Vélocité : Données assurance maladie ou GIE CB sont à haute fréquence
-
-. . .
-
-3. Variété : l’État collecte et exploite des données de natures très différentes
-
-. . .
-
-4. Véracité : erreurs (volontaires ou non) coûteuses permet des données de meilleure qualité que celles auto-déclarées sans contrôle ex-post
-
-. . .
-
-5. Valeur : données collectées par l’État sont d’une grande valeur même si elles ne sont pas monétisées (bien public, sans valeur de marché mais avec une valeur sociale)
 
 ## Une donnée plus sensible {.smaller}
 
@@ -109,12 +72,6 @@ McKinsey définissait les propriétés du _big data_ selon 5V :
     + Information moins précise...
     + ... mais réidentification facilitée en combinant plusieurs sources de données
     + Champ de recherche : _differential privacy_
-
-::: {.callout-note}
-## Le secret statistique (article 7bis de la loi de 1951)
-
-Le secret statistique crée une obligation spéciale dans le cas de données confidentielles collectées, détenues ou produites pour des usages statistiques. Il interdit strictement la communication de données individuelles ou susceptibles d'identifier les personnes, issues de traitements à finalités statistiques, que ces traitements proviennent d’enquêtes ou de bases de données. En dérogation aux règles communes applicables au secret professionnel, le secret statistique est en effet opposable à toute réquisition judiciaire ou émanant d’autorités administratives (fiscale ou douanière par exemple).
-:::
 
 
 ## Usage de la donnée administrative {.smaller}
