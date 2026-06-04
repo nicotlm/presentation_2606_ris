@@ -1,89 +1,6 @@
 # Analyse d'images
 
-## Représentation (1/2)
-
-- [**Image en noir et blanc**]{.orange}: matrice de dimension $L \times W$
-- Plusieurs [**encodages**]{.orange} possibles: valeurs entières entre 0 et 255 (`uint8`), valeurs flottantes entre 0 et 1, etc.
-
-![](img/python_pixels.png){fig-align="center" height=400}
-
-## Représentation (2/2)
-
-- Image en [**couleurs**]{.orange}: matrice de dimension $L \times W \times 3$
-
-![](img/python_color.png){fig-align="center"}
-
-## Vision par ordinateur (1/2)
-
-- Techniques qui permettent à des machines d'acquérir une [**compréhension d'images**]{.orange} ou de vidéos numériques
-- 1973: [**détection de contours**]{.orange}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-![](./img/bike.jpg)
-:::
-
-::: {.column width="50%"}
-![](./img/bike_sobel.jpg)
-:::
-
-::::
-
-## Vision par ordinateur (2/2) {.smaller}
-
-- Mathématiquement, repose sur le [**produit de convolution**]{.orange} matriciel noté $A \star B$, qui est différent du **produit matriciel**
-
-- Le produit de convolution de deux matrices $A \star B$ permet de faire une **somme pondérée** des éléments de la matrice $A$ par ceux de $B$. 
-
-- La matrice $B$ est [**la matrice de convolution**]{.orange} (aussi appelé [** filtre**]{.orange}, noyau ou kernel), et permet **d'extraire** des informations de $A$.  
-
-- Par exemple, ce filtre $B$ permet d'extraire les contours : le résultat de $A \star B$ représentera les contours de $A$.
-$$
-B = \begin{bmatrix}
-1 & 0 & -1\\
-0 & 0 & 0\\
--1 & 0 & 1
-\end{bmatrix}
-$$
-
-
-## Opérateur de convolution {.smaller}
-
-
-::: {#fig-convol layout-ncol=2}
-
-![](img/convol_gen.png){width="50%"}
-
-![](img/convol_calc.png){width="50%"}
-
-Illustration de l'opérateur de convolution 2-dimensionnel $\star$. 
-:::
-
-Le noyau (ou kernel),  en jaune, *glisse* sur la matrice de devant à traiter. Une multiplication élément par élément est faite sur chaque sous-matrice de la taille du noyau. Pour chacune de ces multiplication, les coefficients sont ensuite sommés pour donner une valeur de sortie unique.
-
-## Réseaux de neurones convolutifs {.nostretch}
-
-::: {#fig-nn-convol}
-![Illustration d'une succession de séquences d'un réseau convolutionnel. Emprunté à <https://www.analyticsvidhya.com/blog/2022/01/convolutional-neural-network-an-overview/>](https://editor.analyticsvidhya.com/uploads/59954intro%20to%20CNN.JPG){width=80%}
-:::
-
-## Segmentation sémantique, détection d'objets
-
-::: {#fig-vision-tasks}
-![Tâches classiques de vision](https://nanonets.com/blog/content/images/2020/08/1_Hz6t-tokG1niaUfmcysusw.jpeg)
-:::
-
-## Earth observation (EO) data (1/3)
-
-- Données [**provenant de satellites**]{.orange}, photographies prises depuis un avion, etc. 
-- [**Beaucoup de données ouvertes**]{.orange} ou semi-ouvertes (NASA: Landsat, ESA: Sentinel, Airbus: Pleiades)
-- [**Résolution spatiale**]{.orange} variable (de haute: 10m, à très haute: 0.5m)
-- [**Résolution spectrale**]{.orange} variable
-- [**Couverture régulière**]{.orange} des territoires (par exemple tous les 5j pour Sentinel-2)
-- [**Risques et difficultés**]{.orange}: résultats robustes, disponibilité, temps de calcul, résolution adaptée
-
-## EO data (2/3)
+## EO data (1/2)
 
 - [**Cas d'usage**]{.orange} potentiels multiples: supervision des forêts, de l’agriculture, des masses d’eau, supervision de l'urbanisation et des infrastructures, étude de la pollution environnementale, etc.
 - Aujourd'hui: 
@@ -91,7 +8,7 @@ Le noyau (ou kernel),  en jaune, *glisse* sur la matrice de devant à traiter. U
     - Consolidation des [**statistiques sur les vergers**]{.blue2} issues de l'enquête sur la structure des exploitations agricoles
     - Mise à jour du [**répertoire de logements**]{.blue2} dans les DROM
 
-## EO data (3/3)
+## EO data (2/2)
 
 :::: {.columns}
 
@@ -128,7 +45,3 @@ Le noyau (ou kernel),  en jaune, *glisse* sur la matrice de devant à traiter. U
 
 ::::
 
-## Pour aller plus loin (facultatif) ...
-
-- Application sur le [site web du cours](https://inseefrlab.github.io/cours-nouvelles-donnees-site/images_exemples.html) sur la classification d'oiseaux et le traitement d'images satellites 
-- Entraîner un modèle de classification d'oiseaux avant de traiter des images satellites pour effectuer de la reconnaissance de terrains, avec {{< fa brands python >}} et `scikit-learn`
