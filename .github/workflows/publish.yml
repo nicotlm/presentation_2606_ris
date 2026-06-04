@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+permissions: 
+    contents: write
+    pages: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
