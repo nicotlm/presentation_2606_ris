@@ -30,7 +30,7 @@ custom-toc: true
 
 {{< include "slides/collecte.qmd" >}}
 
-{{< include "slides/_geoloc.qmd" >}}
+<!-- {{< include "slides/_geoloc.qmd" >}} -->
 
 
 {{< include "slides/texte.qmd" >}}
