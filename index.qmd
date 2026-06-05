@@ -23,7 +23,7 @@ custom-toc: true
 
 
 
-# Pourquoi utiliser de nouvelles données ?  
+# Pourquoi utiliser de nouvelles données ?   
 
 ## Les enjeux liés à l'usage de données d'enquête 
 
@@ -69,64 +69,31 @@ custom-toc: true
 
 ## Que sont les données administratives ? 
 
-- __Enregistrements automatisés__ de systèmes de gestion
-- Données __structurées__ sous forme de tableau
+- __Enregistrements automatisés__ de systèmes de gestion 
 
-![Source : [Hadley Wickham, _R for data science_](https://r4ds.hadley.nz/data-tidy.html)](https://r4ds.hadley.nz/images/tidy-1.png)
+- Produite par une administration, avec **coût marginal d'accès faible** pour l'INS
 
+- Une **nouvelle place pour l'INS** qui exploite le flux, car l'autorité gestionnaire occupe une place centrale.
 
+| Donnée | Autorité centralisatrice |
+|------|------|
+| DSN    |  Gip-MDS     |
+| Données hospitalières    | ATIH-10    |
+| SI gestion des eaux    | SANDRE12   |
 
-## Exemple : les données de mutation immobilière (DVF)
+## Exemple 1 : la déclaration sociale nominative (DSN)
 
-```{ojs}
-viewof info_mutations = Inputs.radio(
-  ["Tableau", "Graphique"], {value: "Tableau"}
-)
-```
+- Données issues des fiches de paie [@Humbert2018]
 
-```{ojs}
-info_mutations == "Tableau" ? html`<div>${table_mutations1}<div>` : html`<div>${plot_mutations}<div>`
-```
+![](https://inseefrlab.github.io/cours-nouvelles-donnees-site/img/images/dsn-diff.png){fig-align="center"}
 
-```{ojs}
-//| echo: false
-// data coming from "https://files.data.gouv.fr/geo-dvf/latest/csv/2020/communes/92/92049.csv"
-// fetched manually because of CORS issue
-url = "https://minio.lab.sspcloud.fr/nicolastlm/diffusion/92049.csv"
-dvf = d3.csv(url)
-```
+## Exemple 2 : SIRENE
 
-```{ojs}
-//| output: false
-table_mutations1 = Inputs.table(dvf, {"columns": ['date_mutation', 'valeur_fonciere', 'adresse_nom_voie']})
-plot_mutations = Plot.plot({
-  y: {grid: true, label: "Nombre de transactions"},
-  x: {
-    ticks: 12,
-    transform: (d) => Math.pow(10, d),
-    type: "log",
-    tickFormat: "~s",
-    label: "Prix (échelle log) →"
-  },
-  marks: [
-    Plot.rectY(
-      dvf.filter(d => d.valeur_fonciere > 10000),
-      Plot.binX({y: "count"},
-      {
-        x: d => Math.log10(d.valeur_fonciere),
-        tip: true
-      })
-    ),
-    Plot.ruleY([0])
-  ]
-})
-```
-
-```{ojs}
-Plot = require("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.10/dist/plot.umd.min.js")
-```
-
-_Exemple_ : les données DVF
+- Répertoire d'entreprises administré par l’Insee :
+  - Centralise de l’information sur 32 millions d’établissements
+  - Dont 13 millions d’établissements actifs
+- Met à disposition des utilisateurs un code APE (pour activité principale exercée)
+- Base de référence pour toutes les études et enquêtes statistiques sur les entreprises
 
 
 # La collecte de données en ligne 
@@ -138,7 +105,6 @@ _Exemple_ : les données DVF
 - **Enjeux** :
     - **Techniques** : évolution des pages web, interactivité des sites
     - **Légaux** : jurisprudences, directives de 2020 de la CNIL
-- **Bonnes pratiques** : `robots.txt`
 
 - l'usage de webscraping nécessite un **suivi important en production**. 
 => On privilégie d'autres modes de collecte (API) quand cela est possible  
@@ -275,6 +241,8 @@ prediction_table = {
     - **Permis de construire**
     - Photographies de **tickets de caisse** pour l'enquête Budget de Famille
 
+---
+
 ### Quelques exemples 
 
 - Utilisation d'images satellites : 
@@ -294,8 +262,8 @@ prediction_table = {
 
 ::::
 
---- 
-###  OCR et extraction (2/2)
+
+- OCR et extraction (2/2)
 
 :::: {.columns}
 
@@ -306,6 +274,8 @@ prediction_table = {
 ::: {.column width="50%"}
 ![](./img/annotation_example.png)
 :::
+
+::::
 
 ## Données géolocalisées
 
