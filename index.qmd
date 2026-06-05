@@ -243,7 +243,7 @@ prediction_table = {
 
 ---
 
-### Quelques exemples 
+### Quelques exemples - images satellites 
 
 - Utilisation d'images satellites : 
     - Calcul de statistiques sur **l’occupation et l’usage des sols** (consolidation de l'enquête Teruti)
@@ -262,8 +262,9 @@ prediction_table = {
 
 ::::
 
+---
 
-- OCR et extraction (2/2)
+### Quelques exemples - OCR
 
 :::: {.columns}
 
@@ -296,7 +297,7 @@ prediction_table = {
 ### Exemple : données de téléphonie mobile
 
 - Statistiques intéressantes sur les populations présentes et les déplacements de la population
-    + @galiana-20 : mouvements de population avant/après le confinement de 2020
+@galiana-20 : mouvements de population avant/après le confinement de 2020
 
 ![](https://inseefrlab.github.io/cours-nouvelles-donnees-site/img/geolocalized_data/confinement-deconfinement.png){fig-align="center"}
 
@@ -310,6 +311,21 @@ prediction_table = {
 - `BPE` (Base permanente des équipements)
 - `Sirene` (répertoire des entreprises)
 - `RP` (Recensement de la Population)
+
+##  {#pageDeFin .titreTransparent .unnumbered .backgroundPageFinale}
+
+:::: {.columns .coordonneesFinales}
+ 
+::: {.column .coordonnees width=23%}
+- Nicolas TOULEMONDE
+- Laboratoire d'innovation en data-science (SSPLab)
+- Direction de la méthodologie, de la coordination statistique et internationale (DMCSI)
+:::
+ 
+::: {.column .droite width=87%}
+:::
+ 
+::::
 
 
 ## Bibliographie
