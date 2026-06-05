@@ -1,47 +1,5 @@
 # Les données administratives
 
-## Contexte {.smaller}
-
-- Baisse généralisée des taux de réponse aux enquêtes [@LuitenHoxde; @beck2022] :
-    + Enquête "Cadre de vie et sécurité" : 72 % (2012) à 66 % (2021)
-    + SRCV : 85 % (2010) à 80 % (2019)
-
-. . .
-
-- Données statistiques traditionnelles (sondage ou recensement) produites pour informer :
-    + Cette finalité guide la conception
-    + Mesurer le plus objectivement possible un phénomène cible
-    + Processus de réflexion en amont, échantillonnage _ad hoc_, post-traitement...
-
-. . .
-
-- Numérisation a facilité l'automatisation des systèmes de gestion :
-    + Exploitation statistique ou recherche n'est pas la finalité initiale
-    + Finalité : enregistrement d’événements pour déclencher des actions (remboursement, paiement, etc.)
-    + Opportunité mais perte de contrôle dans la conception
-
-
-
-## Nature des données administratives {.smaller}
-
-### Les déclarations administratives
-
-<br>
-
-- Pouvoir coercitif pouvant aller jusqu'aux poursuites judiciaires
-    + Réduit le risque de non-déclaration ou de déclaration faussée
-    + Information exhaustive et honnête sur la sous-population concernée par la donnée
-
-
-
-::: {.callout-note}
-## Les déclarations administratives [@riviere2018]
-
-Obligation est faite à un certain nombre d’entités (individus, entreprises, organismes publics) de fournir des informations respectant une certaine forme, selon certaines modalités (internet, papier) et temporalités.
-
-Par exemple, les déclarations fiscales des ménages sont annuelles, avec un calendrier déterminé à l’avance (qui dépend du format, papier ou internet).
-:::
-
 
 ## Quelle différence avec les autres sources numériques ? {.smaller}
 
@@ -55,6 +13,9 @@ Par exemple, les déclarations fiscales des ménages sont annuelles, avec un cal
     + Donnée privée : population dépend de la part de marché (évolutive, biaisée)
     + Donnée privée : Même quand population cible est large, risque de biais (âge, territoire...)
 
+- Pouvoir coercitif pouvant aller jusqu'aux poursuites judiciaires
+    + Réduit le risque de non-déclaration ou de déclaration faussée
+    + Information exhaustive et honnête sur la sous-population concernée par la donnée
 . . .
 
 - Différence secondaire : la fréquence de collecte
@@ -87,21 +48,6 @@ Par exemple, les déclarations fiscales des ménages sont annuelles, avec un cal
 [Code statistique non signifiant](https://www.insee.fr/fr/information/5388962) (CSNS) pour les besoins de mise en œuvre de traitements à finalité de statistique publique impliquant le numéro de sécurité sociale (NIR) ou des traits d’identité, en particulier les appariements au sein du Service statistique publique.
 :::
 
-## La spécificité des répertoires {.smaller}
-
-- les répertoires permettent d'identifier de manière unique et stable des unités statistiques
-- rôle clé dans le processus statistique pour effectuer des appariements
-- source de données administratives mais sans finalité de gestion
-
-| Répertoire | Responsable | Finalité |
-|--------|---|-------|
-| répertoire national d'identification des personnes physiques (RNIPP)    |  Insee   | identification des personnes physiques nées en France |
-| Système national de gestion des identifiants (SNGI)    |  CNAV   | identification des personnes physiques
-ayants droit de la sécurité sociale |
-|  répertoire Sirene   | Insee   | identification des personnes morales françaises |
-| l'identifiant national élève (INE)    | SSM Enseignement supérieur (SIES)   | Identifier les étudiants |
-
-
 ## Processus de production
 
 - Place centrale d’une autorité gestionnaire, qui centralise la donnée
@@ -113,7 +59,7 @@ ayants droit de la sécurité sociale |
 | Données hospitalières    | ATIH-10    |
 | SI gestion des eaux    | SANDRE12   |
 
-## Un rôle différent pour le *data scientist* {.smaller}
+## Un rôle différent pour l'INS {.smaller}
 
 - plus le rôle de producteur des données sources mais un rôle différent
 - centré sur 3 phases proposées dans [@RiviereKOUMARIANOS]

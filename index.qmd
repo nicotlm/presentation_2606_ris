@@ -23,20 +23,223 @@ custom-toc: true
 
 
 
-{{< include "slides/_intro.qmd" >}}
+# Contexte
 
+## Les données d'enquête
+
+- Base "historique" des statistiques
+- Nombreux avantages : une **finalité** adaptée, un cadre et concept maîtrisés
+- Mais ce sont des **données longues à récolter et coûteuses pour le répondant et l'Insee** (plusieurs années)
+- Dans un contexte de **demande de statistiques** plus poussées avec des moyens stables
+- Baisse généralisée des taux de réponse aux enquêtes [@LuitenHoxde; @beck2022] :
+    + Enquête "Cadre de vie et sécurité" : 72 % (2012) à 66 % (2021)
+    + SRCV : 85 % (2010) à 80 % (2019)
+
+## En parallèle, prolifération des données
+
+
+- Numérisation et innovations technologiques ont réduit le coût de production de la donnée
+    + Volume de données produites en explosion
+- L'utilisation des statistiques n'est pas nouvelle (cf. [Desrosières](https://www.cairn.info/la-politique-des-grands-nombres--9782707165046.htm))...
+- ... mais une place accrue :
+    + Dans le débat public et l'action publique ([Supiot](https://www.fayard.fr/sciences-humaines/la-gouvernance-par-les-nombres-9782213681092), [Martin](https://www.cairn.info/l-empire-des-chiffres--9782200625719.htm))
+    + Dans les stratégies d'entreprise
+- Nouvelle législation sur l'accès aux données privées
+
+## Diversification des données 
+
+- Des données de nature très différentes :
+    - Données administratives, qui sont souvent structurées et classiques
+    - Données textuelles et non structurées
+    - Images, sons et vidéos
+
+- Besoin de nouvelles méthodes pour valoriser ces données :
+    - _Machine learning_ (re)devenu un outil classique : meilleure prise en compte des non-linéarités, simplicité opérationnelle
+    - Réseaux de neurone pour les problèmes complexes (NLP, CV)...
+
+
+## Diversification des données (1/3)
+
+### Données administratives
+
+- __Enregistrements automatisés__ de systèmes de gestion
+- Données __structurées__ sous forme de tableau
+
+![Source : [Hadley Wickham, _R for data science_](https://r4ds.hadley.nz/data-tidy.html)](https://r4ds.hadley.nz/images/tidy-1.png)
+
+
+## Diversification des données (1/2)
+
+### Données administratives
+
+```{ojs}
+viewof info_mutations = Inputs.radio(
+  ["Tableau", "Graphique"], {value: "Tableau"}
+)
+```
+
+```{ojs}
+info_mutations == "Tableau" ? html`<div>${table_mutations1}<div>` : html`<div>${plot_mutations}<div>`
+```
+
+```{ojs}
+//| echo: false
+// data coming from "https://files.data.gouv.fr/geo-dvf/latest/csv/2020/communes/92/92049.csv"
+// fetched manually because of CORS issue
+url = "https://minio.lab.sspcloud.fr/nicolastlm/diffusion/92049.csv"
+dvf = d3.csv(url)
+```
+
+```{ojs}
+//| output: false
+table_mutations1 = Inputs.table(dvf, {"columns": ['date_mutation', 'valeur_fonciere', 'adresse_nom_voie']})
+plot_mutations = Plot.plot({
+  y: {grid: true, label: "Nombre de transactions"},
+  x: {
+    ticks: 12,
+    transform: (d) => Math.pow(10, d),
+    type: "log",
+    tickFormat: "~s",
+    label: "Prix (échelle log) →"
+  },
+  marks: [
+    Plot.rectY(
+      dvf.filter(d => d.valeur_fonciere > 10000),
+      Plot.binX({y: "count"},
+      {
+        x: d => Math.log10(d.valeur_fonciere),
+        tip: true
+      })
+    ),
+    Plot.ruleY([0])
+  ]
+})
+```
+
+```{ojs}
+Plot = require("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.10/dist/plot.umd.min.js")
+```
+
+_Exemple_ : les données DVF
+
+
+## Diversification des données (2/2)
+
+### Données textuelles et non structurées
+
+- Rapports comptables, annonces légales, journal officiel
+- Développement très rapide de la recherche :
+    + Collecte accrue : réseaux sociaux, enquêtes, _webscraping_...
+    + Baisse coûts stockage & augmentation ressources traitement
+    + Nouvelles techniques statistiques : LLM...
+
+- Utilisation intensive dans l'administration, la recherche et le secteur privé
+
+## Diversification des données (2/2)
+
+### Données textuelles et non structurées
+
+- Les __[LLM]{.blue2}__ bien sûr...
+- ... Mais pas que !
+
+<br>
+
+- Classification automatique de l'activité principale d'une entreprise :
+
+```{ojs}
+async function transformToPost(description) {
+  // Base URL with query parameters
+  const baseUrl = `https://codification-ape2025-pytorch.lab.sspcloud.fr/predict/?nb_echos_max=5&prob_min=0.01&num_workers=0&batch_size=1`;
+
+  // Build the request body according to the expected schema
+  const body = {
+    forms: [
+      {
+        description_activity: description
+      }
+    ]
+  };
+
+  // Send the POST request
+  const response = await fetch(baseUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(body)
+  });
+
+  // Parse and return the JSON response
+  return response.json();
+}
+```
+
+
+```{ojs}
+viewof activite = Inputs.text({
+  label: '',
+  value: 'ma société fera du conseil en traitement de données',
+  width: 800
+})
+
+viewof prediction = Inputs.button("Run Prediction", {
+  reduce: async () => {
+    return await transformToPost(activite);
+  }
+})
+
+// afficher les résultats joliment
+prediction_table = {
+  if (!prediction || !prediction.length) {
+    return html``
+  }
+
+  // la réponse est un tableau avec un seul objet
+  const result = prediction[0]
+  const { IC, MLversion, ...codes } = result
+
+  const rows = Object.values(codes).map(({ code, libelle, probabilite }) => {
+    return html`
+      <tr>
+        <td>${code} – ${libelle}</td>
+        <td style="text-align:right;">${probabilite.toFixed(3)}</td>
+      </tr>
+    `
+  })
+
+  return html`
+    <table style="border-collapse: collapse; width: 100%;">
+      <caption style="margin-bottom: 0.5em;">
+        Confidence score : ${(+IC).toFixed(3)}
+      </caption>
+      <thead>
+        <tr>
+          <th style="text-align:left;">Description (NA2008)</th>
+          <th style="text-align:right;">Probability</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows}
+      </tbody>
+    </table>
+  `
+}
+```
+
+
+<!-- 
 {{< include "slides/_admin.qmd" >}}
 
 
-{{< include "slides/collecte.qmd" >}}
+{{< include "slides/collecte.qmd" >}} -->
 
 <!-- {{< include "slides/_geoloc.qmd" >}} -->
 
 
-{{< include "slides/texte.qmd" >}}
+<!-- {{< include "slides/texte.qmd" >}}
 
-{{< include "slides/images.qmd" >}}
+{{< include "slides/images.qmd" >}} -->
 
-{{< include "slides/nowcasting.qmd" >}}
+<!-- {{< include "slides/nowcasting.qmd" >}} -->
 
 ## Bibliographie
