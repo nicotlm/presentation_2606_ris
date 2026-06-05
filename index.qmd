@@ -45,7 +45,7 @@ custom-toc: true
 - ... mais une place accrue :
     + Dans le débat public et l'action publique ([Supiot](https://www.fayard.fr/sciences-humaines/la-gouvernance-par-les-nombres-9782213681092), [Martin](https://www.cairn.info/l-empire-des-chiffres--9782200625719.htm))
     + Dans les stratégies d'entreprise
-- Nouvelle législation sur l'accès aux données privées
+- Nouvelle législation européenne en 2024 pour permettre l'accès aux données privées - *cf.* [Règlement UE 223/2009](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A02009R0223-20241226) 
 
 
 
@@ -63,7 +63,7 @@ custom-toc: true
     - _Machine learning_ (re)devenu un outil classique : meilleure prise en compte des non-linéarités, simplicité opérationnelle
     - Réseaux de neurone pour les problèmes complexes (NLP, CV)...
 
-
+- Cela a des impacts en termes de **compétences** et parfois aussi **d'organisation**
 
 # Données administratives
 
@@ -262,6 +262,45 @@ prediction_table = {
   `
 }
 ```
+
+# Et encores d'autres données
+
+## Données d'image
+
+
+## Données géolocalisées
+
+### Pourquoi a-t-on besoin de telles données ? 
+
+- Calculer des indicateurs avec une **granularité spatiale fine** pour les acteurs publics et privés
+
+- Éclairer des **phénomènes socio-économiques très locaux** (mixité [@galiana2020segregation], concentration immobilière [@andre-21])
+
+- Réaliser des _dataviz_ plus engageantes pour le public
+
+- Généralisation de traces numériques géolocalisées :
+    + Multiplication des acteurs (production & exploitation)
+    + Données mobile, GPS, localisation d'adresses IP, géolocalisation d'adresses...
+
+---
+
+### Exemple : données de téléphonie mobile
+
+- Statistiques intéressantes sur les populations présentes et les déplacements de la population
+    + @galiana-20 : mouvements de population avant/après le confinement de 2020
+
+![](https://inseefrlab.github.io/cours-nouvelles-donnees-site/img/geolocalized_data/confinement-deconfinement.png){fig-align="center"}
+
+
+--- 
+
+### Autres exemples de données géolocalisées
+
+- `Fideli` (Fichier démographique sur les logements et les individus)
+- `Filosofi` (Fichier localisé social et fiscal)
+- `BPE` (Base permanente des équipements)
+- `Sirene` (répertoire des entreprises)
+- `RP` (Recensement de la Population)
 
 
 ## Bibliographie
