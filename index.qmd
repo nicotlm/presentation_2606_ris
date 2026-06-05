@@ -23,17 +23,18 @@ custom-toc: true
 
 
 
-# Contexte
+# Pourquoi utiliser de nouvelles données ?  
 
-## Les données d'enquête
+## Les enjeux liés à l'usage de données d'enquête 
 
 - Base "historique" des statistiques
 - Nombreux avantages : une **finalité** adaptée, un cadre et concept maîtrisés
 - Mais ce sont des **données longues à récolter et coûteuses pour le répondant et l'Insee** (plusieurs années)
-- Dans un contexte de **demande de statistiques** plus poussées avec des moyens stables
 - Baisse généralisée des taux de réponse aux enquêtes [@LuitenHoxde; @beck2022] :
     + Enquête "Cadre de vie et sécurité" : 72 % (2012) à 66 % (2021)
     + SRCV : 85 % (2010) à 80 % (2019)
+
+- Dans un contexte de **demande de statistiques** plus poussées avec des moyens stables
 
 ## En parallèle, prolifération des données
 
@@ -46,21 +47,27 @@ custom-toc: true
     + Dans les stratégies d'entreprise
 - Nouvelle législation sur l'accès aux données privées
 
-## Diversification des données 
 
-- Des données de nature très différentes :
+
+# Des nouvelles données disponibles
+
+
+## Des nouvelles données disponibles avec de nouvelles méthodes
+
+- Des **données de nature très différentes** :
     - Données administratives, qui sont souvent structurées et classiques
     - Données textuelles et non structurées
     - Images, sons et vidéos
 
-- Besoin de nouvelles méthodes pour valoriser ces données :
+- Besoin de **nouvelles méthodes** pour valoriser ces données :
     - _Machine learning_ (re)devenu un outil classique : meilleure prise en compte des non-linéarités, simplicité opérationnelle
     - Réseaux de neurone pour les problèmes complexes (NLP, CV)...
 
 
-## Diversification des données (1/3)
 
-### Données administratives
+# Données administratives
+
+## Que sont les données administratives ? 
 
 - __Enregistrements automatisés__ de systèmes de gestion
 - Données __structurées__ sous forme de tableau
@@ -68,9 +75,8 @@ custom-toc: true
 ![Source : [Hadley Wickham, _R for data science_](https://r4ds.hadley.nz/data-tidy.html)](https://r4ds.hadley.nz/images/tidy-1.png)
 
 
-## Diversification des données (1/2)
 
-### Données administratives
+## Exemple : les données de mutation immobilière (DVF)
 
 ```{ojs}
 viewof info_mutations = Inputs.radio(
@@ -123,9 +129,33 @@ Plot = require("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.10/dist/plot
 _Exemple_ : les données DVF
 
 
-## Diversification des données (2/2)
+# La collecte de données en ligne 
 
-### Données textuelles et non structurées
+## Les opportunités et difficultés posées par le webscraping
+
+- [**Webscraping**]{.orange} : extraction du contenu de sites Internet
+- Information textuelle [**très riche**]{.orange} sur Internet, mobilisable à des fins de statistique publique
+- [**Enjeux**]{.orange} :
+    - [**Techniques**]{.blue2} : évolution des pages web, interactivité des sites
+    - [**Légaux**]{.blue2} : jurisprudences, directives de 2020 de la CNIL
+- [**Bonnes pratiques**]{.orange} : `robots.txt`
+
+- l'usage de webscraping nécessite un **suivi important en production**. 
+=> On privilégie d'autres modes de collecte (API) quand cela est possible  
+
+## Des exemples d'utilisation de webscraping
+
+- Prix dans le [**domaine de l'hôtellerie**]{.orange} : scraping du site [Booking.com](https://www.booking.com/)
+- Vente d'[**articles électroniques**]{.orange} :
+    - [Boulanger](https://www.boulanger.com/)
+    - [Rue du commerce](https://www.rueducommerce.fr/)
+- Scraping du [**site de la SNCF**]{.orange} : collecte quotidienne pour capter la volatilité des prix
+- Scrapping des offres d'emploi (projet [**Jocas**](https://dares.travail-emploi.gouv.fr/enquete-source/jocas)) par la Dares
+
+
+# Données textuelles et non structurées
+
+## Pourquoi utiliser des textuelles et non structurées
 
 - Rapports comptables, annonces légales, journal officiel
 - Développement très rapide de la recherche :
@@ -135,9 +165,8 @@ _Exemple_ : les données DVF
 
 - Utilisation intensive dans l'administration, la recherche et le secteur privé
 
-## Diversification des données (2/2)
 
-### Données textuelles et non structurées
+## Un exemple : l'usage de méthodes de ML pour classifier l'activité principale des entreprises
 
 - Les __[LLM]{.blue2}__ bien sûr...
 - ... Mais pas que !
@@ -226,20 +255,5 @@ prediction_table = {
 }
 ```
 
-
-<!-- 
-{{< include "slides/_admin.qmd" >}}
-
-
-{{< include "slides/collecte.qmd" >}} -->
-
-<!-- {{< include "slides/_geoloc.qmd" >}} -->
-
-
-<!-- {{< include "slides/texte.qmd" >}}
-
-{{< include "slides/images.qmd" >}} -->
-
-<!-- {{< include "slides/nowcasting.qmd" >}} -->
 
 ## Bibliographie
