@@ -133,23 +133,23 @@ _Exemple_ : les données DVF
 
 ## Les opportunités et difficultés posées par le webscraping
 
-- [**Webscraping**]{.orange} : extraction du contenu de sites Internet
-- Information textuelle [**très riche**]{.orange} sur Internet, mobilisable à des fins de statistique publique
-- [**Enjeux**]{.orange} :
-    - [**Techniques**]{.blue2} : évolution des pages web, interactivité des sites
-    - [**Légaux**]{.blue2} : jurisprudences, directives de 2020 de la CNIL
-- [**Bonnes pratiques**]{.orange} : `robots.txt`
+- **Webscraping** : extraction du contenu de sites Internet
+- Information textuelle **très riche** sur Internet, mobilisable à des fins de statistique publique
+- **Enjeux** :
+    - **Techniques** : évolution des pages web, interactivité des sites
+    - **Légaux** : jurisprudences, directives de 2020 de la CNIL
+- **Bonnes pratiques** : `robots.txt`
 
 - l'usage de webscraping nécessite un **suivi important en production**. 
 => On privilégie d'autres modes de collecte (API) quand cela est possible  
 
 ## Des exemples d'utilisation de webscraping
 
-- Prix dans le [**domaine de l'hôtellerie**]{.orange} : scraping du site [Booking.com](https://www.booking.com/)
-- Vente d'[**articles électroniques**]{.orange} :
+- Prix dans le **domaine de l'hôtellerie** : scraping du site [Booking.com](https://www.booking.com/)
+- Vente d'**articles électroniques** :
     - [Boulanger](https://www.boulanger.com/)
     - [Rue du commerce](https://www.rueducommerce.fr/)
-- Scraping du [**site de la SNCF**]{.orange} : collecte quotidienne pour capter la volatilité des prix
+- Scraping du **site de la SNCF** : collecte quotidienne pour capter la volatilité des prix
 - Scrapping des offres d'emploi (projet [**Jocas**](https://dares.travail-emploi.gouv.fr/enquete-source/jocas)) par la Dares
 
 
@@ -158,18 +158,26 @@ _Exemple_ : les données DVF
 ## Pourquoi utiliser des textuelles et non structurées
 
 - Rapports comptables, annonces légales, journal officiel
-- Développement très rapide de la recherche :
+- Un des **domaines de recherche les plus actifs** en _data science_
     + Collecte accrue : réseaux sociaux, enquêtes, _webscraping_...
     + Baisse coûts stockage & augmentation ressources traitement
     + Nouvelles techniques statistiques : LLM...
 
-- Utilisation intensive dans l'administration, la recherche et le secteur privé
+- **Beaucoup d'applications** potentielles pour la statistique publique :
+    - Données d'**enquête**
+    - Données **administratives**
+    - Données **privées** mobilisables pour la statistique publique
 
 
-## Un exemple : l'usage de méthodes de ML pour classifier l'activité principale des entreprises
+## Un exemple : classifier l'activité principale des entreprises
 
-- Les __[LLM]{.blue2}__ bien sûr...
-- ... Mais pas que !
+- Classification dans des **nomenclatures** :
+    - **Profession** (enquêtes, recensement de la population)
+    - **Activité** des entreprises
+    - **Produits** de consommation
+- **Appariements**
+- **Extraction automatique** de contenu au sein de documents textuels
+- Modèles de langage **génératifs** : assistants de code, RAG, etc.
 
 <br>
 
