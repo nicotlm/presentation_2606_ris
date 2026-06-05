@@ -265,8 +265,47 @@ prediction_table = {
 
 # Et encores d'autres données
 
-## Données d'image
+## L'utilisation d'images 
 
+### Pour quels cas d'usage ? 
+
+- Utilisation **d'images satellites** avec des cas d'usage potentiels multiples (supervision des forêts, de l’agriculture, des masses d’eau, supervision de l'urbanisation et des infrastructures, etc) 
+- Utilité de techniques d'OCR/**reconnaissance optique de caractères** pour les documents scannés ou photographiés :
+    - Comptes **annuels des entreprises**
+    - **Permis de construire**
+    - Photographies de **tickets de caisse** pour l'enquête Budget de Famille
+
+### Quelques exemples 
+
+- Utilisation d'images satellites : 
+    - Calcul de statistiques sur **l’occupation et l’usage des sols** (consolidation de l'enquête Teruti)
+    - Consolidation des **statistiques sur les vergers** issues de l'enquête sur la structure des exploitations agricoles
+    - Mise à jour du **répertoire de logements** dans les DROM
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](./img/sat_t1.png)
+:::
+
+::: {.column width="50%"}
+![](./img/sat_t2.png)
+:::
+
+::::
+
+--- 
+###  OCR et extraction (2/2)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](./img/pdf_example.png)
+:::
+
+::: {.column width="50%"}
+![](./img/annotation_example.png)
+:::
 
 ## Données géolocalisées
 
