@@ -48,16 +48,13 @@ custom-toc: true
 - Nouvelle législation européenne en 2024 pour permettre l'accès aux données privées - *cf.* [Règlement UE 223/2009](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A02009R0223-20241226) 
 
 
-
-# Des nouvelles données disponibles
-
-
 ## Des nouvelles données disponibles avec de nouvelles méthodes
 
 - Des **données de nature très différentes** :
     - Données administratives, qui sont souvent structurées et classiques
+    - Données en ligne (webscraping)
     - Données textuelles et non structurées
-    - Images, sons et vidéos
+    - Et encore d'autres données : images, sons, données localisées
 
 - Besoin de **nouvelles méthodes** pour valoriser ces données :
     - _Machine learning_ (re)devenu un outil classique : meilleure prise en compte des non-linéarités, simplicité opérationnelle
