@@ -325,4 +325,4 @@ prediction_table = {
 ::::
 
 
-## Bibliographie
+## Bibliographie {.unnumbered}
